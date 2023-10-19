@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.header {
+  @apply flex items-start justify-between p-5 mx-auto max-w-7xl w-full xl:items-center z-20 sticky top-0;
+}
+
+
+
+.btn_hero {
+  @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A] hover:shadow-lg hover:scale-105;
+}
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.flex-col-center {
+  @apply flex flex-col justify-center items-center;
+}
+
+.flex-start {
+  @apply flex justify-start items-start;
+}
+
+.flex-end {
+  @apply flex justify-end items-center;
+}
+
+.flex-between {
+  @apply flex justify-between items-center;
+}
+
+.contact-input {
+  @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:shadow-lg focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40 hover:shadow-lg hover:text-[#F7AB0A]/40;
+}
