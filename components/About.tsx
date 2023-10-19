@@ -23,7 +23,7 @@ export default function About({ pageInfo }: Props) {
                 transition={{
                     duration: 1.5
                 }}
-                className='flex flex-col relative h-screen md:pt-14 text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center'>
+                className='flex flex-col relative h-screen pb-10 md:pb-0 md:pt-14 text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center'>
                 <SectionTitle text='About' />
                 <motion.img
                     src={urlFor(pageInfo?.profilePic).url()}
@@ -41,10 +41,10 @@ export default function About({ pageInfo }: Props) {
                         delay: 0.2
                     }}
                     viewport={{ once: true }}
-                    className='w-52 h-52 mt-24 md:mt-0 flex-shrink-0 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 lg:w-[400px] lg:h-[400px] xl:w-[450px] xl:h-[450px]'
+                    className='w-48 h-48 mt-24 md:mt-0 flex-shrink-0 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 lg:w-[400px] lg:h-[400px] xl:w-[450px] xl:h-[450px]'
                 />
                 <div className='space-y-8 px-0 md:px-20 md:mb-10'>
-                    <h4 className='text-4xl font-semibold'>
+                    <h4 className='text-3xl md:text-4xl font-semibold'>
                         Here is a <span className='underline decoration-[#F7AB0A]/50'>little</span> background
                     </h4>
                     <p className='text-base'>

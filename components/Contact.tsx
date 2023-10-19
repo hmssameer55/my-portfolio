@@ -30,15 +30,15 @@ export default function Contact({ pageInfo }: Props) {
 
     return (
         <section className='snap-start' id="contact">
-            <div className='flex-col-center relative h-screen overflow-hidden text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto'>
+            <div className='flex-col-center relative h-screen overflow-hidden text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto pb-5 md:pb-0'>
                 <SectionTitle text='Contact me' />
 
-                <div className='flex-col-center space-y-10 mt-24'>
-                    <h4 className='text-3xl font-bold text-center'>
+                <div className='flex-col-center space-y-8 md:space-y-10 mt-24'>
+                    <h4 className='text-2xl md:text-3xl font-bold text-center'>
                         I have got just what you need.
                         <span className='underline decoration-[#F7AB0A]/50'> Let&apos;s talk.</span>
                     </h4>
-                    <div className='flex-col-center space-y-4'>
+                    <div className='flex-col-center space-y-3'>
                         <div className='flex-center gap-2'>
                             <PhoneIcon className='h-6 w-6 text-[#F7AB0A]' />
                             <p className='text-xl'>
