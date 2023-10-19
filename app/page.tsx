@@ -8,7 +8,7 @@ import Projects from '@components/Projects'
 import Contact from '@components/Contact'
 import Footer from '@components/Footer'
 import { PageInfo, Social, Experience, Skill, Project } from '../typings'
-import { getPageInfo, getSocials, getExperiences, getSkills, getProjects } from '@utils/api'
+import { getSocials, getPageInfo, getExperiences, getProjects, getSkills } from './sanity-utils/sanity-utils'
 
 export default async function Home() {
 
