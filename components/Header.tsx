@@ -48,7 +48,9 @@ export default function Header({ socials }: Props) {
                             key={social._id}
                             fgColor='gray'
                             bgColor='transparent'
-                            url={social.url} />
+                            url={social.url}
+                            target='_blank'
+                        />
                     ))
                 }
             </motion.div>

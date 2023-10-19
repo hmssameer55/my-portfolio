@@ -27,7 +27,7 @@ const experienceQuery = groq`
 
 export async function getSocials() {
     try {
-        const data = await SantiyClient.fetch(socialQuery);
+        const data = await SantiyClient.fetch(socialQuery, { Cache: "no-cache" });
         return data;
     } catch (error) {
         console.error("Error fetching social data:", error);
