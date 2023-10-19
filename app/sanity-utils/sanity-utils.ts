@@ -1,6 +1,5 @@
 import { groq } from "next-sanity";
 import SantiyClient from '@sanity/helper'
-import { cache } from "react";
 
 
 const socialQuery = groq`
@@ -26,61 +25,57 @@ const experienceQuery = groq`
     *[_type == "experience"]
 `
 
-export const revalidate = 60
+const revalidate = 60 * 60
 
-export const getSocials = cache(async () => {
+export async function getSocials() {
     try {
-        const data = await SantiyClient.fetch(socialQuery);
+        const data = await SantiyClient.fetch(socialQuery, { next: revalidate });
         return data;
     } catch (error) {
         console.error("Error fetching social data:", error);
         throw error; // Rethrow the error for error handling in your application
     }
 }
-)
 
-export const getPageInfo = cache(async () => {
+export async function getPageInfo() {
     try {
-        const data = await SantiyClient.fetch(pageInfoQuery);
+        const data = await SantiyClient.fetch(pageInfoQuery, { next: revalidate });
         return data;
     } catch (error) {
         console.error("Error fetching page info:", error);
         throw error;
     }
-})
+}
 
-export const getSkills = cache(async () => {
+export async function getSkills() {
     try {
-        const data = await SantiyClient.fetch(skillQuery);
+        const data = await SantiyClient.fetch(skillQuery, { next: revalidate });
         return data;
     } catch (error) {
         console.error("Error fetching skills:", error);
         throw error;
     }
 }
-)
 
-export const getProjects = cache(async () => {
+export async function getProjects() {
     try {
-        const data = await SantiyClient.fetch(projectQuery);
+        const data = await SantiyClient.fetch(projectQuery, { next: revalidate });
         return data;
     } catch (error) {
         console.error("Error fetching projects:", error);
         throw error;
     }
 }
-)
 
-export const getExperiences = cache(async () => {
+export async function getExperiences() {
     try {
-        const data = await SantiyClient.fetch(experienceQuery);
+        const data = await SantiyClient.fetch(experienceQuery, { next: revalidate });
         return data;
     } catch (error) {
         console.error("Error fetching experiences:", error);
         throw error;
     }
 }
-)
 
 
 
