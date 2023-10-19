@@ -1,5 +1,6 @@
 import { groq } from "next-sanity";
 import SantiyClient from '@sanity/helper'
+import { cache } from "react";
 
 
 const socialQuery = groq`
@@ -25,17 +26,20 @@ const experienceQuery = groq`
     *[_type == "experience"]
 `
 
-export async function getSocials() {
+export const revalidate = 60 * 60
+
+export const getSocials = cache(async () => {
     try {
-        const data = await SantiyClient.fetch(socialQuery, { Cache: "no-cache" });
+        const data = await SantiyClient.fetch(socialQuery);
         return data;
     } catch (error) {
         console.error("Error fetching social data:", error);
         throw error; // Rethrow the error for error handling in your application
     }
 }
+)
 
-export async function getPageInfo() {
+export const getPageInfo = cache(async () => {
     try {
         const data = await SantiyClient.fetch(pageInfoQuery);
         return data;
@@ -43,9 +47,9 @@ export async function getPageInfo() {
         console.error("Error fetching page info:", error);
         throw error;
     }
-}
+})
 
-export async function getSkills() {
+export const getSkills = cache(async () => {
     try {
         const data = await SantiyClient.fetch(skillQuery);
         return data;
@@ -54,8 +58,9 @@ export async function getSkills() {
         throw error;
     }
 }
+)
 
-export async function getProjects() {
+export const getProjects = cache(async () => {
     try {
         const data = await SantiyClient.fetch(projectQuery);
         return data;
@@ -64,8 +69,9 @@ export async function getProjects() {
         throw error;
     }
 }
+)
 
-export async function getExperiences() {
+export const getExperiences = cache(async () => {
     try {
         const data = await SantiyClient.fetch(experienceQuery);
         return data;
@@ -74,6 +80,7 @@ export async function getExperiences() {
         throw error;
     }
 }
+)
 
 
 
