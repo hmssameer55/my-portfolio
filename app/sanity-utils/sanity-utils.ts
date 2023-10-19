@@ -26,7 +26,7 @@ const experienceQuery = groq`
     *[_type == "experience"]
 `
 
-export const revalidate = 60 * 60
+export const revalidate = 60
 
 export const getSocials = cache(async () => {
     try {
