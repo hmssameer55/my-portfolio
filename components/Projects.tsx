@@ -11,6 +11,10 @@ type Props = {
 }
 
 export default function Projects({ projects }: Props) {
+    
+const sortedProjects = projects.sort((a, b) => {
+    return new Date(a._updatedAt).getTime() - new Date(b._updatedAt).getTime()
+})
 
     return (
         <section className='snap-start' id="projects">
@@ -28,7 +32,7 @@ export default function Projects({ projects }: Props) {
                 <div className='relative w-screen p-10 flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-10
                  scrollbar-thin scrollbar-thumb-[#F7AB0A] scrollbar-track-gray-100 scrollbar-thumb-rounded-full scrollbar-track-rounded-full
                 '>
-                    {projects.map((project, index) => (
+                    {sortedProjects.map((project, index) => (
                         <ProjectCard
                             key={index}
                             project={project}

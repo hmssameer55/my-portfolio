@@ -28,9 +28,9 @@ export default function ProjectCard({ project }: Props) {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 1.5, delay: 0.5 }}
                 viewport={{ once: true }}
-                src={urlFor(image).url()}
+                src={urlFor(image).width(180).height(180).url()}
                 alt={name}
-                className='object-cover rounded-full h-28 w-28 md:h-72 md:w-72'
+                className='object-cover rounded-full h-28 w-28 md:h-auto md:w-auto'
             />
             <div className='space-y-6 px-0 md:px-10 max-w-6xl'>
                 <h4 className='text-3xl font-semibold text-center capitalize'>
