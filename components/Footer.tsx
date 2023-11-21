@@ -21,17 +21,29 @@ export default function Footer({ }: Props) {
 
      
         <Script id="1">
-          {`window.project_id="GJzobNQjUZoQZJih0YGs";
+          {`window.project_id="nQJ1GSps8CRQ1nViNXIo";
             window.frame_type="widget";
             `}
         </Script>
         <Script
           id="2"
-          src="https://app.getodin.ai/loader.min.js"
-          project_id="GJzobNQjUZoQZJih0YGs"
+          src="https://dev.getodin.ai/loader.min.js"
+          project_id="nQJ1GSps8CRQ1nViNXIo"
           frame_type="widget"
           defer></Script>
       
+                {/* <Script>
+            {`window.embeddedChatbotConfig = {
+            chatbotId: "GPACtlTwnFIHYWhUeQRvn",
+            domain: "www.chatbase.co"
+            }`}
+            </Script>
+            <Script
+            src="https://www.chatbase.co/embed.min.js"
+            chatbotId="GPACtlTwnFIHYWhUeQRvn"
+            domain="www.chatbase.co"
+            defer>
+            </Script> */}
         </footer>
     )
 }
