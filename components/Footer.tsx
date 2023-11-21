@@ -19,17 +19,19 @@ export default function Footer({ }: Props) {
                 </Link>
             </div>
 
-            <Script id="1">
+     
+        <Script id="1">
           {`window.project_id="GJzobNQjUZoQZJih0YGs";
-        window.frame_type="window";
-        `}
+            window.frame_type="widget";
+            `}
         </Script>
         <Script
           id="2"
           src="https://app.getodin.ai/loader.min.js"
           project_id="GJzobNQjUZoQZJih0YGs"
-          frame_type="window"
+          frame_type="widget"
           defer></Script>
+      
         </footer>
     )
 }
