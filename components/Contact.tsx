@@ -1,11 +1,10 @@
 "use client"
 
-import React from 'react'
+import React, {useState,useEffect} from 'react'
 import SectionTitle from './SectionTitle'
 import { PhoneIcon, MapIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
 import { useForm, SubmitHandler } from "react-hook-form"
 import { PageInfo } from '@typings'
-
 
 type Props = {
     pageInfo: PageInfo
@@ -22,18 +21,34 @@ export default function Contact({ pageInfo }: Props) {
 
     const { register, handleSubmit } = useForm<Inputs>();
 
+    const [windowWidth, setWindowWidth] = useState<number>(0);
+
     const { email, address, phone } = pageInfo
 
     const onSubmit: SubmitHandler<Inputs> = (data) => {
         window.location.href = `mailto:hmssameer55@gmail.com?subject=${data.subject}&body= Hi My name is ${data.name} and I am contacting you regarding ${data.message}`
     };
 
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []); 
+
+ 
+    const isMobile = windowWidth <= 768; // Adjust the value as needed
+
+
     return (
         <section className='snap-start' id="contact">
             <div className='flex-col-center relative h-screen overflow-hidden text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto pb-5 md:pb-0'>
                 <SectionTitle text='Contact me' />
 
-                <div className='flex-col-center space-y-8 md:space-y-10 mt-24'>
+                <div className='flex-col-center space-y-8 md:space-y-10 mt-28'>
                     <h4 className='text-2xl md:text-3xl font-bold text-center'>
                         I have got just what you need.
                         <span className='underline decoration-[#F7AB0A]/50'> Let&apos;s talk.</span>
@@ -74,7 +89,7 @@ export default function Contact({ pageInfo }: Props) {
                             type="text" placeholder='Subject' className='contact-input w-full' />
                         <textarea
                             {...register("message", { required: true })}
-                            rows={3}
+                            rows={isMobile ? 2  : 3}
                             placeholder='Message' className='contact-input w-full' />
                         <button
                             type='submit'
