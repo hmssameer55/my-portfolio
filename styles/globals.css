@@ -5,10 +5,8 @@
 
 
 .header {
-  @apply flex items-start justify-between p-5 mx-auto max-w-7xl w-full xl:items-center z-20 sticky top-2 md:top-0;
+  @apply flex items-start justify-between p-5 mx-auto max-w-7xl w-full xl:items-center z-20 sticky top-0.5 md:top-0;
 }
-
-
 
 .btn_hero {
   @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A] hover:shadow-lg hover:scale-105;
