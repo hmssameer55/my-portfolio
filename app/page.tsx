@@ -90,7 +90,7 @@ export async function getExperiences() {
     }
 }
 
-export const revalidate = 3600
+export const revalidate = 100
 
 export default async function Home() {
 
